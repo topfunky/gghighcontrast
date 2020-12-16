@@ -5,8 +5,6 @@
 
 A high contrast retro theme with solid colors.
 
-## Examples
-
 ## Installation
 
 <!--
@@ -28,7 +26,9 @@ with:
 devtools::install_github("topfunky/gghighcontrast")
 ```
 
-## High contrast mode for ggplot2
+## Usage
+
+A line chart.
 
 ``` r
 library(ggplot2)
@@ -84,6 +84,8 @@ p
 
 ![](man/figures/line-default-1.png)<!-- -->
 
+A bar chart.
+
 ``` r
 library(ggplot2)
 library(gghighcontrast)
@@ -131,6 +133,13 @@ p
 ```
 
 ![](man/figures/bar-default-1.png)<!-- -->
+
+For fun, try other foreground and background colors such as:
+
+``` r
+dayglo_orange = "#ff6700"
+neon_green = "#00ff00"
+```
 
 ## Usage
 

@@ -8,8 +8,6 @@ output: github_document
 
 A high contrast retro theme with solid colors.
 
-## Examples
-
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -37,7 +35,9 @@ If you want the development version, you can install ggdark from GitHub with:
 devtools::install_github("topfunky/gghighcontrast")
 ```
 
-## High contrast mode for ggplot2
+## Usage
+
+A line chart.
 
 ```{r line-default, dpi=360, fig.path="man/figures/"}
 library(ggplot2)
@@ -91,6 +91,8 @@ p <- plot_line_high_contrast(data)
 p
 ```
 
+A bar chart.
+
 ```{r bar-default, dpi=360, fig.path="man/figures/"}
 library(ggplot2)
 library(gghighcontrast)
@@ -135,6 +137,13 @@ plot_bar_high_contrast <-
   }
 p <- plot_bar_high_contrast(data)
 p
+```
+
+For fun, try other foreground and background colors such as:
+
+```{r eval=FALSE}
+dayglo_orange = "#ff6700"
+neon_green = "#00ff00"
 ```
 
 ## Usage

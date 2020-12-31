@@ -1,6 +1,6 @@
 #' A high contrast theme.
 #'
-#' Description goes here.
+#' Easily customizable with a foreground and background color. Other customization is possible.
 #'
 #' @param base_size font size to use for the text in the plot (\code{11})
 #' @param base_family font to use for the text in the plot (\code{"InputMono"})
@@ -16,13 +16,15 @@
 #' @importFrom colorspace lighten darken
 #'
 #' @export
+NULL
+
 theme_high_contrast <- function(base_size = 11,
                            base_family = "",
                            foreground_color = "white",
                            background_color = "black")
 {
   half_line <- base_size / 2
-  theme(
+  t <- theme(
     line = element_line(
       colour = foreground_color,
       size = 0.5,
@@ -127,5 +129,8 @@ theme_high_contrast <- function(base_size = 11,
     plot.margin = margin(half_line, half_line, half_line, half_line * 1.5),
     complete = TRUE
   )
+
+  # Make sure all elements are set to NULL if not explicitly defined
+  # ggplot_global$theme_all_null %+replace% t
 }
 

@@ -7,19 +7,8 @@ A high contrast retro theme with solid colors.
 
 ## Installation
 
-<!--
-
-You can install gghighcontrast from CRAN with:
-
-
-```r
-install.packages("gghighcontrast")
-```
-
--->
-
-If you want the development version, you can install ggdark from GitHub
-with:
+This library is currently only available from GitHub. You can install
+`gghighcontrast` from GitHub with:
 
 ``` r
 # install.packages("devtools")
@@ -79,6 +68,8 @@ plot_line_high_contrast <-
   }
 
 p <- plot_line_high_contrast(data)
+#> Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+#> ℹ Please use `linewidth` instead.
 p
 ```
 

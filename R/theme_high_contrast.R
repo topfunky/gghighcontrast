@@ -19,22 +19,22 @@
 NULL
 
 theme_high_contrast <- function(base_size = 11,
-                           base_family = "",
-                           foreground_color = "white",
-                           background_color = "black")
+                                base_family = "",
+                                foreground_color = "white",
+                                background_color = "black")
 {
   half_line <- base_size / 2
   t <- theme(
     line = element_line(
       colour = foreground_color,
-      size = 0.5,
+      linewidth = 0.5,
       linetype = 1,
       lineend = "butt"
     ),
     rect = element_rect(
       fill = foreground_color,
       colour = foreground_color,
-      size = 0.5,
+      linewidth = 0.5,
       linetype = 1
     ),
     text = element_text(
@@ -79,10 +79,15 @@ theme_high_contrast <- function(base_size = 11,
 
     legend.background = element_rect(colour = background_color, fill = background_color),
     legend.spacing = unit(0.2, "cm"),
-    legend.key = element_rect(fill = background_color, colour = foreground_color),
+    legend.key = element_rect(
+      fill = background_color,
+      colour = foreground_color,
+      linewidth = 0
+    ),
     legend.key.size = unit(1.2, "lines"),
     legend.key.height = NULL,
     legend.key.width = NULL,
+
     legend.text = element_text(size = rel(0.8)),
     legend.text.align = NULL,
     legend.title = element_text(hjust = 0),
@@ -128,9 +133,10 @@ theme_high_contrast <- function(base_size = 11,
                                 hjust = 1),
     plot.margin = margin(half_line, half_line, half_line, half_line * 1.5),
     complete = TRUE
-  )
-
+  ) +
+    # TODO: Merge with attributes above
+    # Removes outline from legend elements (no box)
+    theme(legend.key = element_blank())
   # Make sure all elements are set to NULL if not explicitly defined
   # ggplot_global$theme_all_null %+replace% t
 }
-

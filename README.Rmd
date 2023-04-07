@@ -18,17 +18,7 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-<!--
-
-You can install gghighcontrast from CRAN with:
-
-```{r cran-installation, eval = FALSE}
-install.packages("gghighcontrast")
-```
-
--->
-
-If you want the development version, you can install ggdark from GitHub with:
+This library is currently only available from GitHub. You can install `gghighcontrast` from GitHub with:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")

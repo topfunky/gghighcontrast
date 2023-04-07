@@ -133,9 +133,10 @@ theme_high_contrast <- function(base_size = 11,
                                 hjust = 1),
     plot.margin = margin(half_line, half_line, half_line, half_line * 1.5),
     complete = TRUE
-  )
-
+  ) +
+    # TODO: Merge with attributes above
+    # Removes outline from legend elements (no box)
+    theme(legend.key = element_blank())
   # Make sure all elements are set to NULL if not explicitly defined
   # ggplot_global$theme_all_null %+replace% t
 }
-
